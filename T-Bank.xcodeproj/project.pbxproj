@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D00EA3BE29FA64F9006471CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EA3BD29FA64F9006471CF /* AppDelegate.swift */; };
-		D00EA3C229FA64F9006471CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EA3C129FA64F9006471CF /* ViewController.swift */; };
+		D00EA3C229FA64F9006471CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EA3C129FA64F9006471CF /* LoginViewController.swift */; };
 		D00EA3C729FA64FF006471CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00EA3C629FA64FF006471CF /* Assets.xcassets */; };
 		D00EA3CA29FA64FF006471CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00EA3C829FA64FF006471CF /* LaunchScreen.storyboard */; };
+		D00EA3D429FA8311006471CF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00EA3D329FA8311006471CF /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D00EA3BA29FA64F9006471CF /* T-Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00EA3BD29FA64F9006471CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D00EA3C129FA64F9006471CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D00EA3C129FA64F9006471CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D00EA3C629FA64FF006471CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D00EA3C929FA64FF006471CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D00EA3CB29FA64FF006471CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D00EA3D329FA8311006471CF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +54,30 @@
 		D00EA3BC29FA64F9006471CF /* T-Bank */ = {
 			isa = PBXGroup;
 			children = (
+				D00EA3D129FA82E8006471CF /* Files */,
+				D00EA3D229FA82F2006471CF /* Login */,
 				D00EA3BD29FA64F9006471CF /* AppDelegate.swift */,
-				D00EA3C129FA64F9006471CF /* ViewController.swift */,
+			);
+			path = "T-Bank";
+			sourceTree = "<group>";
+		};
+		D00EA3D129FA82E8006471CF /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				D00EA3C629FA64FF006471CF /* Assets.xcassets */,
 				D00EA3C829FA64FF006471CF /* LaunchScreen.storyboard */,
 				D00EA3CB29FA64FF006471CF /* Info.plist */,
 			);
-			path = "T-Bank";
+			name = Files;
+			sourceTree = "<group>";
+		};
+		D00EA3D229FA82F2006471CF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D00EA3C129FA64F9006471CF /* LoginViewController.swift */,
+				D00EA3D329FA8311006471CF /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D00EA3C229FA64F9006471CF /* ViewController.swift in Sources */,
+				D00EA3D429FA8311006471CF /* LoginView.swift in Sources */,
+				D00EA3C229FA64F9006471CF /* LoginViewController.swift in Sources */,
 				D00EA3BE29FA64F9006471CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
