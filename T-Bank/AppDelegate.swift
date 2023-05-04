@@ -47,7 +47,6 @@ extension AppDelegate {
                           duration: 0.3,
                           options: .transitionCrossDissolve,
                           animations: nil)
-        
     }
 }
 
@@ -58,7 +57,6 @@ extension AppDelegate: LoginViewControllerDelegate {
         } else {
             setRootViewController(onboardingContainerViewController)
         }
-        
     }
 }
 

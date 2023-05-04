@@ -17,7 +17,6 @@ class DummyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         style()
         layout()
     }
@@ -30,12 +29,12 @@ extension DummyViewController {
         stackView.spacing = 20
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Welcome"
+        label.text = "Добро пожаловать!"
         label.font = UIFont.preferredFont(forTextStyle: .title1)
         
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.configuration = .filled()
-        logoutButton.setTitle("Logout", for: [])
+        logoutButton.setTitle("Выйти", for: [])
         logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .primaryActionTriggered)
     }
     
@@ -49,8 +48,6 @@ extension DummyViewController {
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
-        
     }
 }
 

@@ -64,9 +64,11 @@ extension LoginViewController {
         subtitleLabel.text = "Ваш премиальный ресурс для всех банковских дел!"
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
-        signInButton.configuration = .filled()
         signInButton.configuration?.imagePadding = 8
-        signInButton.setTitle("Sign In", for: [])
+        signInButton.layer.cornerRadius = 10
+        signInButton.backgroundColor = .yellow
+        signInButton.tintColor = .black
+        signInButton.setTitle("Войти", for: [])
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered)
         
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +108,7 @@ extension LoginViewController {
         // Button
         NSLayoutConstraint.activate([
             signInButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 2),
-            //signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            signInButton.heightAnchor.constraint(equalToConstant: 47),
             signInButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
             signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
         ])
@@ -124,18 +126,17 @@ extension LoginViewController {
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
         errorMessageLabel.isHidden = true
-        
         login()
     }
     
     private func login() {
         guard let username = username, let password = password else {
-            assertionFailure("Username / Password should never be nil")
+            assertionFailure("Имя пользователя или пароль не должны быть пустыми.")
             return
         }
         
         if username.isEmpty || password.isEmpty {
-            configureView(withMessage: "Username / Password cannot be blank")
+            configureView(withMessage: "Имя пользователя или пароль не заполнены")
             return
         }
         
@@ -143,7 +144,7 @@ extension LoginViewController {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
         } else {
-            configureView(withMessage: "Incorrect username / password")
+            configureView(withMessage: "Не корректное имя пользователя или пароль.")
         }
     }
     

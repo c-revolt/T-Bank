@@ -17,9 +17,9 @@ class OnboardingContainerViewController: UIViewController {
     var pages = [UIViewController]()
     
     let closeButton = UIButton(type: .system)
-    @objc let nextButton = UIButton(type: .system)
-    @objc let backButton = UIButton(type: .system)
-    @objc let doneButton = UIButton(type: .system)
+    let nextButton = UIButton(type: .system)
+    let backButton = UIButton(type: .system)
+    let doneButton = UIButton(type: .system)
     
     weak var delegate: OnboardingContainerViewControllerDelegate?
     
@@ -36,11 +36,11 @@ class OnboardingContainerViewController: UIViewController {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         
         let page1 = OnboardingViewController(stringImageName: "car.fill",
-                                             titleText: "T-bank is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in the 80s.")
+                                             titleText: "T-bank быстрый и простой в использовании. А так же обладающий всеми необходимыми инструментами для современного онлайн банка.")
         let page2 = OnboardingViewController(stringImageName: "globe.europe.africa",
-                                             titleText: "Move your money around the world quickly and securely.")
+                                             titleText: "Переводите деньги клиентам по всему миру. Это быстро и безопасно.")
         let page3 = OnboardingViewController(stringImageName: "hand.thumbsup.fill",
-                                             titleText: "Learn more at www.t-bank.com")
+                                             titleText: "Миллионы пользователей уже по достоинству оценили наш продукт.")
         
         pages.append(page1)
         pages.append(page2)
@@ -57,12 +57,9 @@ class OnboardingContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
         style()
         layout()
-        
-       
     }
     
     private func setup() {
@@ -88,19 +85,27 @@ class OnboardingContainerViewController: UIViewController {
     
     private func style() {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setTitle("Закрыть", for: [])
+        closeButton.setTitle("Выйти", for: [])
+        closeButton.configuration = .plain()
+        closeButton.setTitleColor(.black, for: .normal)
         closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
         
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.setTitle("Дальше", for: [])
+        nextButton.configuration = .plain()
+        nextButton.setTitleColor(.gray, for: .normal)
         nextButton.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.setTitle("Назад", for: [])
+        backButton.configuration = .plain()
+        backButton.setTitleColor(.gray, for: .normal)
         backButton.addTarget(self, action: #selector(backTapped), for: .primaryActionTriggered)
         
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         doneButton.setTitle("Закончить", for: [])
+        doneButton.configuration = .plain()
+        doneButton.setTitleColor(.link, for: .normal)
         doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
     }
     

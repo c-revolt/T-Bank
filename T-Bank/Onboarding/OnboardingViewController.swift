@@ -18,8 +18,6 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //view.backgroundColor = .black
         style()
         layout()
     }
@@ -37,7 +35,6 @@ class OnboardingViewController: UIViewController {
 }
 
 extension OnboardingViewController {
-    
     private func style() {
         view.backgroundColor = .systemBackground
         
@@ -46,6 +43,7 @@ extension OnboardingViewController {
         stackView.spacing = 5
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.frame = CGRect(x: stackView.spacing, y: stackView.spacing, width: 150, height: 150)
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .black
         imageView.image = UIImage(systemName: stringImageName)
@@ -60,19 +58,16 @@ extension OnboardingViewController {
     }
     
     private func layout() {
-        stackView.addArrangedSubview(imageView)
+  //      stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-
-//            imageView.widthAnchor.constraint(equalToConstant: 150),
-//            imageView.heightAnchor.constraint(equalToConstant: 150),
-
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
+            
         ])
     }
 }

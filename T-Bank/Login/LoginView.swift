@@ -16,7 +16,6 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         style()
         layout()
     }
@@ -27,7 +26,6 @@ class LoginView: UIView {
 }
 
 extension LoginView {
-    
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .secondarySystemBackground
@@ -37,18 +35,18 @@ extension LoginView {
         stackView.spacing = 8
         
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.placeholder = "Username"
+        usernameTextField.placeholder = "Имя пользователя"
         usernameTextField.delegate = self
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = "Пароль"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
         
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .secondarySystemFill
         
-        layer.cornerRadius = 5
+        layer.cornerRadius = 10
         clipsToBounds = true
     }
     
@@ -57,7 +55,6 @@ extension LoginView {
         stackView.addArrangedSubview(dividerView)
         stackView.addArrangedSubview(passwordTextField)
         addSubview(stackView)
-        
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
